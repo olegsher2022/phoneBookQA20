@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import utils.RandomUtils;
+
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +17,7 @@ public class RegistrationTests {
 
     WebDriver driver;
 
-    RandomUtils randomUtils = new RandomUtils();
+   // RandomUtils randomUtils = new RandomUtils();
 
     @BeforeClass
     public void preconditions() {
@@ -30,7 +30,8 @@ public class RegistrationTests {
     @Test
     public void registrationPositive() {
 
-        String email = randomUtils.generateEmail(7);
+        String email = "";
+                //randomUtils.generateEmail(7);
         System.out.println(email);
 
         WebElement btnLogin = driver.findElement(By.xpath("//a[@href='/login']"));
