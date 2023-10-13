@@ -2,6 +2,7 @@ package manager;
 
 import dto.UserDTO;
 import dto.UserDTOWith;
+import dto.UserDtoLombok;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -34,5 +35,12 @@ public class UserHelper extends BaseHelper{
     public boolean validateContactTextDisplaysMainMenu() {
         String expectedResult = "CONTACTS".toUpperCase();
         return isTextEqual(textContacts, expectedResult);
+    }
+
+    public void fillLoginUserDtoLombok(UserDtoLombok user) {
+        clickBase(btnOpenLoginForm);
+        typeTextBase(inputEmail, user.getEmail());
+        typeTextBase(inputPassword, user.getPassword());
+        clickBase(btnLogin);
     }
 }
