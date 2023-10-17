@@ -43,4 +43,28 @@ public class UserHelper extends BaseHelper{
         typeTextBase(inputPassword, user.getPassword());
         clickBase(btnLogin);
     }
+
+    public void fillRegUserDtoLombok(UserDtoLombok user) {
+        clickBase(btnOpenLoginForm);
+        typeTextBase(inputEmail, user.getEmail());
+        typeTextBase(inputPassword, user.getPassword());
+        jsClickBase(btnRegistration);
+    }
+
+    public boolean validateMessageAlertWrongEmailPasswordCorrect() {
+        String expectedResult = "Wrong email or password".toUpperCase();
+        String actualResult = getTextAlert();
+        return isTextEqualGet2Strings(expectedResult, actualResult);
+    }
+
+    public boolean validateMessageAlertWrongEmailPasswordCorrectReg() {
+        String expectedResult = "WRONG EMAIL OR PASSWORD FORMAT\n" +
+                "            EMAIL MUST CONTAINS ONE @ AND MINIMUM 2 SYMBOLS AFTER LAST DOT\n" +
+                "            PASSWORD MUST CONTAIN AT LEAST ONE UPPERCASE LETTER!\n" +
+                "            PASSWORD MUST CONTAIN AT LEAST ONE LOWERCASE LETTER!\n" +
+                "            PASSWORD MUST CONTAIN AT LEAST ONE DIGIT!\n" +
+                "            PASSWORD MUST CONTAIN AT LEAST ONE SPECIAL SYMBOL FROM [‘$’,’~’,’-‘,’_’]!";
+        String actualResult = getTextAlert();
+        return isTextEqualGet2Strings(expectedResult, actualResult);
+    }
 }

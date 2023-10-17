@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15db8580-5b9c-41ad-be07-7df3da50e1ee" name="Changes" comment="hw 8">
-      <change afterPath="$PROJECT_DIR$/chromedriver" afterDir="false" />
+    <list default="true" id="15db8580-5b9c-41ad-be07-7df3da50e1ee" name="Changes" comment="hw 9">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/manager/BaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/BaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/manager/UserHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/UserHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RegistrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RegistrationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,14 +59,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/julia/Documents/java/qa20/phoneBookQA20/src/test/java/dto"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/julia/Documents/java/qa20/phoneBookQA20&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/dto" />
@@ -71,8 +75,8 @@
       <recent name="$PROJECT_DIR$/src/test/java" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.LoginTests.positiveLoginUserDtoWith">
-    <configuration name="LoginTests.loginPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.LoginTests.negativeWrongPasswordNoLetters">
+    <configuration name="LoginTests.negativeWrongPasswordNoLetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -85,7 +89,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;starttests.LoginTests.loginPositive&quot;" />
+            <option value="&quot;tests.LoginTests.negativeWrongPasswordNoLetters&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -96,7 +100,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="LoginTests.positiveLoginUserDto" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LoginTests.positiveLoginUserDtoLombok" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -109,7 +113,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.LoginTests.positiveLoginUserDto&quot;" />
+            <option value="&quot;tests.LoginTests.positiveLoginUserDtoLombok&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -120,7 +124,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="LoginTests.positiveLoginUserDtoWith" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RegistrationTests.negativeRegNoDigits" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -133,7 +137,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.LoginTests.positiveLoginUserDtoWith&quot;" />
+            <option value="&quot;tests.RegistrationTests.negativeRegNoDigits&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -144,7 +148,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTests.registrationPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RegistrationTests.negativeRegNoSymbol" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -157,7 +161,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;starttests.RegistrationTests.registrationPositive&quot;" />
+            <option value="&quot;tests.RegistrationTests.negativeRegNoSymbol&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="RegistrationTests.positiveRegistration" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.RegistrationTests.positiveRegistration&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -170,10 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LoginTests.positiveLoginUserDtoWith" />
-        <item itemvalue="Gradle.LoginTests.positiveLoginUserDto" />
-        <item itemvalue="Gradle.RegistrationTests.registrationPositive" />
-        <item itemvalue="Gradle.LoginTests.loginPositive" />
+        <item itemvalue="Gradle.LoginTests.negativeWrongPasswordNoLetters" />
+        <item itemvalue="Gradle.RegistrationTests.negativeRegNoDigits" />
+        <item itemvalue="Gradle.RegistrationTests.negativeRegNoSymbol" />
+        <item itemvalue="Gradle.RegistrationTests.positiveRegistration" />
+        <item itemvalue="Gradle.LoginTests.positiveLoginUserDtoLombok" />
       </list>
     </recent_temporary>
   </component>
@@ -202,12 +231,21 @@
       <option name="project" value="LOCAL" />
       <updated>1696953407624</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="hw 9">
+      <option name="closed" value="true" />
+      <created>1697178344578</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697178344578</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hw 7" />
     <MESSAGE value="hw 8" />
-    <option name="LAST_COMMIT_MESSAGE" value="hw 8" />
+    <MESSAGE value="hw 9" />
+    <option name="LAST_COMMIT_MESSAGE" value="hw 9" />
   </component>
 </project>

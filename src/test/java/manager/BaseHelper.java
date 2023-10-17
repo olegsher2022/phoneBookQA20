@@ -1,8 +1,8 @@
 package manager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -44,7 +44,10 @@ public class BaseHelper {
     public boolean isTextEqual(By locator, String expectedResult) {
         String actualResult = getTextBase(locator);
         expectedResult = expectedResult.toUpperCase();
+        return isTextEqualGet2Strings(expectedResult, actualResult);
+    }
 
+    public boolean isTextEqualGet2Strings(String expectedResult, String actualResult) {
         if(expectedResult.equals(actualResult)) {
             return true;
         } else {
@@ -52,5 +55,16 @@ public class BaseHelper {
                     "actual result: " + actualResult);
             return false;
         }
+    }
+
+    public String getTextAlert() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        return alert.getText().toUpperCase().trim();
+    }
+
+    public void jsClickBase(String locator) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript(locator);
     }
 }

@@ -34,4 +34,35 @@ public class LoginTests extends BaseTests {
         Assert.assertTrue(app.getUserHelper().validateContactTextDisplaysMainMenu());
     }
 
+    @Test
+    public void negativeWrongPasswordWrongSymbol() {
+        UserDtoLombok user = UserDtoLombok.builder()
+                .email("testqa20@gmail.com")
+                .password("123456Aa5")
+                .build();
+        app.getUserHelper().fillLoginUserDtoLombok(user);
+        Assert.assertTrue(app.getUserHelper().validateMessageAlertWrongEmailPasswordCorrect()); // Wrong email or password
+    }
+
+    @Test
+    public void negativeWrongPasswordNoLetters() {
+        UserDtoLombok user = UserDtoLombok.builder()
+                .email("testqa20@gmail.com")
+                .password("12345655$")
+                .build();
+        app.getUserHelper().fillLoginUserDtoLombok(user);
+        Assert.assertTrue(app.getUserHelper().validateMessageAlertWrongEmailPasswordCorrect()); // Wrong email or password
+    }
+
+    @Test
+    public void negativeWrongPasswordNoDigits() {
+        UserDtoLombok user = UserDtoLombok.builder()
+                .email("testqa20@gmail.com")
+                .password("ajdsbH#$dmk")
+                .build();
+        app.getUserHelper().fillLoginUserDtoLombok(user);
+        Assert.assertTrue(app.getUserHelper().validateMessageAlertWrongEmailPasswordCorrect()); // Wrong email or password
+    }
+
+
 }
