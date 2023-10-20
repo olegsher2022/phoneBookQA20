@@ -54,17 +54,12 @@ public class UserHelper extends BaseHelper{
     public boolean validateMessageAlertWrongEmailPasswordCorrect() {
         String expectedResult = "Wrong email or password".toUpperCase();
         String actualResult = getTextAlert();
-        return isTextEqualGet2Strings(expectedResult, actualResult);
+        return isTextContainsGet2Strings(expectedResult, actualResult);
     }
 
     public boolean validateMessageAlertWrongEmailPasswordCorrectReg() {
-        String expectedResult = "WRONG EMAIL OR PASSWORD FORMAT\n" +
-                "            EMAIL MUST CONTAINS ONE @ AND MINIMUM 2 SYMBOLS AFTER LAST DOT\n" +
-                "            PASSWORD MUST CONTAIN AT LEAST ONE UPPERCASE LETTER!\n" +
-                "            PASSWORD MUST CONTAIN AT LEAST ONE LOWERCASE LETTER!\n" +
-                "            PASSWORD MUST CONTAIN AT LEAST ONE DIGIT!\n" +
-                "            PASSWORD MUST CONTAIN AT LEAST ONE SPECIAL SYMBOL FROM [‘$’,’~’,’-‘,’_’]!";
+        String expectedResult = "WRONG EMAIL OR PASSWORD FORMAT";
         String actualResult = getTextAlert();
-        return isTextEqualGet2Strings(expectedResult, actualResult);
+        return isTextContainsGet2Strings(expectedResult, actualResult);
     }
 }

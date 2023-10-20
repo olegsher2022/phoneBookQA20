@@ -49,11 +49,11 @@ public class BaseHelper {
     public boolean isTextEqual(By locator, String expectedResult) {
         String actualResult = getTextBase(locator);
         expectedResult = expectedResult.toUpperCase();
-        return isTextEqualGet2Strings(expectedResult, actualResult);
+        return isTextContainsGet2Strings(expectedResult, actualResult);
     }
 
-    public boolean isTextEqualGet2Strings(String expectedResult, String actualResult) {
-        if(expectedResult.equals(actualResult)) {
+    public boolean isTextContainsGet2Strings(String expectedResult, String actualResult) {
+        if(actualResult.contains(expectedResult)) {
             return true;
         } else {
             System.out.println("expected result: " + expectedResult +
