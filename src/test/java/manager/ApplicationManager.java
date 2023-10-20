@@ -33,4 +33,8 @@ public class ApplicationManager {
         driver.quit();
     }
 
+    public void navigateToMainPage() {
+        driver.navigate().to("https://telranedu.web.app/home");
+    }
+
 }

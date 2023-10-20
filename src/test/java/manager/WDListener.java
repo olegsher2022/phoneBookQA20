@@ -25,10 +25,10 @@ public class WDListener extends AbstractWebDriverEventListener {
     @Override
     public void beforeAlertAccept(WebDriver driver) {
         super.beforeAlertAccept(driver);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        logger.info("before alert accept: the url is: " + driver.getCurrentUrl() +
-                "alert title: " + alert.getText());
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+//        logger.info("before alert accept: the url is: " + driver.getCurrentUrl() +
+//                "alert title: " + alert.getText());
     }
 
     @Override
