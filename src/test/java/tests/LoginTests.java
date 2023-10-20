@@ -14,7 +14,12 @@ public class LoginTests extends BaseTests {
 
     @Test
     public void positiveLoginUserDto() {
+        logger.info("logger info: start test positiveLoginUserDto");
+        logger.info(String
+                .format("in the next function: open login page, fill email input with email: %s and with the password: %s and click on button login",
+                        userDTO.getEmail(), userDTO.getPassword()));
         app.getUserHelper().fillLoginUserDto(userDTO);
+        logger.info("validation by assertTrue, that contacts link displays in the menu");
         Assert.assertTrue(app.getUserHelper().validateContactTextDisplaysMainMenu());
     }
 

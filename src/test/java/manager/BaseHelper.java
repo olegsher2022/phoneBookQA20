@@ -3,10 +3,14 @@ package manager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class BaseHelper {
+
+    Logger logger = LoggerFactory.getLogger(BaseHelper.class);
 
     WebDriver driver;
 
@@ -15,6 +19,7 @@ public class BaseHelper {
     }
 
     private WebElement findElementBase(By locator) {
+        logger.info("search element by locator: " + locator);
         System.out.println(locator);
         return driver.findElement(locator);
     }
