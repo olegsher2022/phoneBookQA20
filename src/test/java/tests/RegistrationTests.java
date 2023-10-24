@@ -9,19 +9,19 @@ import utils.RandomUtils;
 
 public class RegistrationTests extends BaseTests {
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void preconditionsBeforeClass() {
         if(app.isPageUrlHome()) {
             app.getUserHelper().openLoginPage();
         }
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void preconditionsBeforeMethod() {
         preconditionForLoginAndRegTests();
     }
 
-    @Test
+    @Test(groups={"smoke","regression"})
     public void positiveRegistration() {
         RandomUtils randomUtils = new RandomUtils();
         String email = randomUtils.generateEmail(7);

@@ -23,12 +23,12 @@ public class BaseTests {
             .password("123456Aa$")
             .build();
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public void setup() {
         app.init();
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void stop() {
         app.tearDown();
     }

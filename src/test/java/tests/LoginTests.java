@@ -10,14 +10,14 @@ import org.testng.annotations.Test;
 
 public class LoginTests extends BaseTests {
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void preconditionsBeforeClass() {
         if(app.isPageUrlHome()) {
             app.getUserHelper().openLoginPage();
         }
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void preconditionsBeforeMethod() {
         preconditionForLoginAndRegTests();
     }
@@ -26,7 +26,7 @@ public class LoginTests extends BaseTests {
             .withPassword("123456Aa$");
     UserDTO userDTO = new UserDTO("testqa20@gmail.com", "123456Aa$");
 
-    @Test
+    @Test(groups={"smoke"})
     public void positiveLoginUserDto() {
         logger.info("logger info: start test positiveLoginUserDto");
         logger.info(String
@@ -45,7 +45,7 @@ public class LoginTests extends BaseTests {
         Assert.assertTrue(app.getUserHelper().validateContactTextDisplaysMainMenu());
     }
 
-    @Test
+    @Test(groups={"regression"})
     public void positiveLoginUserDtoLombok() {
         UserDtoLombok user = UserDtoLombok.builder()
                 .email("testqa20@gmail.com")
@@ -56,7 +56,7 @@ public class LoginTests extends BaseTests {
         Assert.assertTrue(app.getUserHelper().validateContactTextDisplaysMainMenu());
     }
 
-    @Test
+    @Test (groups = {"smoke"})
     public void negativeWrongPasswordWrongSymbol() {
         UserDtoLombok user = UserDtoLombok.builder()
                 .email("testqa20@gmail.com")
@@ -88,6 +88,5 @@ public class LoginTests extends BaseTests {
         flagIsAlertPresent = true;
         Assert.assertTrue(app.getUserHelper().validateMessageAlertWrongEmailPasswordCorrect()); // Wrong email or password
     }
-
 
 }
