@@ -6,42 +6,20 @@ import dto.UserDtoLombok;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoginTests extends BaseTests {
 
-    boolean flagIsAlertPresent = false;
-    boolean flagIsUserLogin = false;
-
     @BeforeClass
     public void preconditionsBeforeClass() {
-    // refresh // go main page // click btn login
-        app.navigateToMainPage();
-        app.getUserHelper().refresh();
-        app.getUserHelper().openLoginPage();
+        if(app.isPageUrlHome()) {
+            app.getUserHelper().openLoginPage();
+        }
     }
 
-    @BeforeMethod
+    @AfterMethod
     public void preconditionsBeforeMethod() {
-        if(flagIsAlertPresent) {
-           // app.getUserHelper().refresh();
-            flagIsUserLogin = false;
-//            try {
-//                Thread.sleep(10000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-            app.getUserHelper().clickAcceptAlert();
-        }
-        if (flagIsUserLogin) {
-            flagIsUserLogin = false;
-            app.getUserHelper().logout();
-        }
-        app.getUserHelper().refresh();
-        // login
-        // sign out
-        // alert
+        preconditionForLoginAndRegTests();
     }
     UserDTOWith userDTOWith = new UserDTOWith()
             .withEmail("testqa20@gmail.com")

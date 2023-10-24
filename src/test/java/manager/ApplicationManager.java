@@ -37,4 +37,10 @@ public class ApplicationManager {
         driver.navigate().to("https://telranedu.web.app/home");
     }
 
+    public boolean isPageUrlHome() {
+        String url = driver.getCurrentUrl();
+        System.out.println(url + "-------------------- url");
+        return url.equals("https://telranedu.web.app/home");
+    }
+
 }
