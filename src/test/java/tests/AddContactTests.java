@@ -25,6 +25,8 @@ public class AddContactTests extends BaseTests{
     @Test
     public void addContactPositive() {
         String phone = randomUtils.generateStringDigits(12);
+        System.out.println("phone for the new contact: " + phone);
+        logger.info("phone for the new contact: " + phone);
         NewContactDto newContactDto = NewContactDto.builder()
                 .address("ghj")
                 .description("asadhj")

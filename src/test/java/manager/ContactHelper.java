@@ -1,5 +1,6 @@
 package manager;
 
+import dto.NewContactDto;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -10,6 +11,7 @@ public class ContactHelper extends BaseHelper{
         super(driver);
     }
 
+    String phoneLocal = "";
     By btnAddNewContact = By.xpath("//a[@href='/add']");
     By inputNameAddContact = By.xpath("//input[@placeholder='Name']");
     By inputLastNameAddContact = By.xpath("//input[@placeholder='Last Name']");
@@ -18,10 +20,32 @@ public class ContactHelper extends BaseHelper{
     By inputAddressAddContact = By.xpath("//input[@placeholder='Address']");
     By inputDescriptionAddContact = By.xpath("//input[@placeholder='description']");
     By btnSaveNewContact = By.xpath("//button/b");
+    By textH3ContactList = By.xpath("//h3");
+    By btnRemoveContact = By.xpath("//button[text()='Remove']");
+    By phoneNumberInContacts = By.xpath(String.format("//h3[contains(text(),'%s')]", phoneLocal));
+                            // By.xpath(String.format("//a[contains(@title,'%s')]", boardName));
 
-    /*
-    click btnAddNewContact
-    fill pcaceholder inputs 6
-    btnSaveNewContact click
-     */
+    public void addNewContact(NewContactDto newContactDto) {
+        clickBase(btnAddNewContact);
+        typeTextBase(inputNameAddContact, newContactDto.getName());
+        typeTextBase(inputLastNameAddContact, newContactDto.getLastName());
+        typeTextBase(inputPhoneAddContact, newContactDto.getPhone());
+        typeTextBase(inputEmailAddContact, newContactDto.getEmail());
+        typeTextBase(inputAddressAddContact, newContactDto.getAddress());
+        typeTextBase(inputDescriptionAddContact, newContactDto.getDescription());
+        clickBase(btnSaveNewContact);
+    }
+
+    public boolean validateContactCreated(String phone) {
+        return isElementByTextExistInTheList(textH3ContactList, phone);
+    }
+
+    public void openContactInfoByPhone(String phone) {
+        phoneLocal = phone;
+        clickBase(phoneNumberInContacts);
+    }
+
+    public void removeActiveContact() {
+        clickBase(btnRemoveContact);
+    }
 }
