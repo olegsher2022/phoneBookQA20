@@ -3,6 +3,7 @@ package data;
 import dto.UserDtoLombok;
 import org.testng.annotations.DataProvider;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -42,6 +43,28 @@ public class DataProviderLogin {
                         .password("123456Aaa")
                         .build()
         });
+        return list.iterator();
+    }
+
+    @DataProvider
+    public Iterator<Object[]> loginCSV() {
+        List<Object[]> list = new ArrayList<>();
+        String path = "src/test/resources/datalogin.csv";
+        try(BufferedReader reader = new BufferedReader(new FileReader(new File(path)))) {
+            String line = reader.readLine();
+            while(line != null) {
+                String[] split = line.split(",");
+                list.add(new Object[]{
+                        UserDtoLombok.builder()
+                                .email(split[0])
+                                .password(split[1])
+                                .build()
+                });
+                line = reader.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return list.iterator();
     }
 }

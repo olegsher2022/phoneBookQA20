@@ -1,5 +1,6 @@
 package tests;
 
+import data.DataProviderLogin;
 import dto.UserDtoLombok;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -23,7 +24,7 @@ public class RegistrationTests extends BaseTests {
 
     @Test(groups={"smoke","regression"})
     public void positiveRegistration() {
-        RandomUtils randomUtils = new RandomUtils();
+        //RandomUtils randomUtils = new RandomUtils();
         String email = randomUtils.generateEmail(7);
         UserDtoLombok user = UserDtoLombok.builder()
                 .email(email)
@@ -34,9 +35,16 @@ public class RegistrationTests extends BaseTests {
         Assert.assertTrue(app.getUserHelper().validateContactTextDisplaysMainMenu());
     }
 
+    @Test (enabled = false, dataProvider = "loginCSV", dataProviderClass = DataProviderLogin.class)
+    public void positiveRegistration(UserDtoLombok userDP) {
+        app.getUserHelper().fillRegUserDtoLombok(userDP);
+        flagIsUserLogin = true;
+        Assert.assertTrue(app.getUserHelper().validateContactTextDisplaysMainMenu());
+    }
+
     @Test
     public void negativeRegNoSymbol() {
-        RandomUtils randomUtils = new RandomUtils();
+     //   RandomUtils randomUtils = new RandomUtils();
         String email = randomUtils.generateEmail(7);
         UserDtoLombok user = UserDtoLombok.builder()
                 .email(email)
@@ -49,7 +57,7 @@ public class RegistrationTests extends BaseTests {
 
     @Test
     public void negativeRegNoLetters() {
-        RandomUtils randomUtils = new RandomUtils();
+     //   RandomUtils randomUtils = new RandomUtils();
         String email = randomUtils.generateEmail(7);
         UserDtoLombok user = UserDtoLombok.builder()
                 .email(email)
@@ -62,7 +70,7 @@ public class RegistrationTests extends BaseTests {
 
     @Test
     public void negativeRegNoDigits() {
-        RandomUtils randomUtils = new RandomUtils();
+      //  RandomUtils randomUtils = new RandomUtils();
         String email = randomUtils.generateEmail(7);
         UserDtoLombok user = UserDtoLombok.builder()
                 .email(email)

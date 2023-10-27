@@ -46,7 +46,8 @@ public class LoginTests extends BaseTests {
         Assert.assertTrue(app.getUserHelper().validateContactTextDisplaysMainMenu());
     }
 
-    @Test(groups={"regression"}, dataProvider = "positiveDataLogin", dataProviderClass = DataProviderLogin.class)
+   // @Test(groups={"regression"}, dataProvider = "positiveDataLogin", dataProviderClass = DataProviderLogin.class)
+   @Test (dataProvider = "loginCSV", dataProviderClass = DataProviderLogin.class)
     public void positiveLoginUserDtoLombok(UserDtoLombok userDP) {
 //        UserDtoLombok user = UserDtoLombok.builder()
 //                .email("testqa20@gmail.com")
