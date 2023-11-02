@@ -12,13 +12,14 @@ public class DeleteConactTests extends BaseTests{
     public void preconditionsBeforeClass() {
         if(app.isPageUrlHome()) {
             app.getUserHelper().openLoginPage();
-            app.getUserHelper().fillLoginUserDtoLombok(user);
         }
+        app.getUserHelper().fillLoginUserDtoLombok(user);
     }
 
     @AfterClass(alwaysRun = true)
-    public void postConditions() {
+    public void postConditions() throws InterruptedException {
         app.getUserHelper().logout();
+        Thread.sleep(500);
     }
 
     @Test
@@ -37,6 +38,7 @@ public class DeleteConactTests extends BaseTests{
         app.getContactHelper().addNewContact(newContactDto);
         app.getContactHelper().openContactInfoByPhone(phone);
         app.getContactHelper().removeActiveContact();
+        app.getContactHelper().navigateToContactPage();
         Assert.assertFalse(app.getContactHelper().validateContactCreated(phone));
     }
 }

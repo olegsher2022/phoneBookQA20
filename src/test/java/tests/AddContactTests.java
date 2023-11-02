@@ -12,8 +12,8 @@ public class AddContactTests extends BaseTests{
     public void preconditionsBeforeClass() {
         if(app.isPageUrlHome()) {
             app.getUserHelper().openLoginPage();
-            app.getUserHelper().fillLoginUserDtoLombok(user);
         }
+        app.getUserHelper().fillLoginUserDtoLombok(user);
     }
 
     @AfterClass(alwaysRun = true)

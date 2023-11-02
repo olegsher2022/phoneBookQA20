@@ -11,7 +11,7 @@ public class ContactHelper extends BaseHelper{
         super(driver);
     }
 
-    String phoneLocal = "";
+    //String phoneLocal = "";
     By btnAddNewContact = By.xpath("//a[@href='/add']");
     By inputNameAddContact = By.xpath("//input[@placeholder='Name']");
     By inputLastNameAddContact = By.xpath("//input[@placeholder='Last Name']");
@@ -22,8 +22,13 @@ public class ContactHelper extends BaseHelper{
     By btnSaveNewContact = By.xpath("//button/b");
     By textH3ContactList = By.xpath("//h3");
     By btnRemoveContact = By.xpath("//button[text()='Remove']");
-    By phoneNumberInContacts = By.xpath(String.format("//h3[contains(text(),'%s')]", phoneLocal));
-                            // By.xpath(String.format("//a[contains(@title,'%s')]", boardName));
+
+    //-------------------------------------------------
+    //By phoneNumberInContacts = By.xpath(String.format("//h3[contains(text(),'%s')]", phoneLocal));
+   public By getPhoneNumberInContactsLocator(String phone) {
+       return By.xpath(String.format("//h3[contains(text(),'%s')]", phone));
+   }
+   //-----------------------------------------------------
 
     public void addNewContact(NewContactDto newContactDto) {
         clickBase(btnAddNewContact);
@@ -41,11 +46,15 @@ public class ContactHelper extends BaseHelper{
     }
 
     public void openContactInfoByPhone(String phone) {
-        phoneLocal = phone;
-        clickBase(phoneNumberInContacts);
+//        phoneLocal = phone;
+        clickBase(getPhoneNumberInContactsLocator(phone));
     }
 
     public void removeActiveContact() {
         clickBase(btnRemoveContact);
+    }
+
+    public void navigateToContactPage() {
+       driver.navigate().to("https://telranedu.web.app/contacts");
     }
 }

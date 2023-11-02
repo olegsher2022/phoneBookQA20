@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15db8580-5b9c-41ad-be07-7df3da50e1ee" name="Changes" comment="properties">
+    <list default="true" id="15db8580-5b9c-41ad-be07-7df3da50e1ee" name="Changes" comment="delete contact test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/log-20231024T144922.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AddContactTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AddContactTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DeleteConactTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DeleteConactTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/screenshots/screenshot-2023-10-20_11_25_22.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,15 +59,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/julia/Documents/java/qa20/phoneBookQA20",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/julia/Documents/java/qa20/phoneBookQA20&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
@@ -78,7 +81,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.Tests in 'tests'">
-    <configuration name="LoginTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AddContactTests.addContactPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -91,7 +94,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.LoginTests&quot;" />
+            <option value="&quot;tests.AddContactTests.addContactPositive&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -102,7 +105,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="LoginTests.negativeWrongPasswordNoLetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DeleteConactTests.deleteCreatedContactPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -115,7 +118,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.LoginTests.negativeWrongPasswordNoLetters&quot;" />
+            <option value="&quot;tests.DeleteConactTests.deleteCreatedContactPositive&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -126,7 +129,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="LoginTests.positiveLoginUserDto" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LoginTests.positiveLoginUserDtoLombok" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -139,7 +142,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.LoginTests.positiveLoginUserDto&quot;" />
+            <option value="&quot;tests.LoginTests.positiveLoginUserDtoLombok&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -150,7 +153,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RegistrationTests.positiveRegistration" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -163,7 +166,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.RegistrationTests&quot;" />
+            <option value="&quot;tests.RegistrationTests.positiveRegistration&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -201,10 +204,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'tests'" />
-        <item itemvalue="Gradle.LoginTests.negativeWrongPasswordNoLetters" />
-        <item itemvalue="Gradle.RegistrationTests" />
-        <item itemvalue="Gradle.LoginTests" />
-        <item itemvalue="Gradle.LoginTests.positiveLoginUserDto" />
+        <item itemvalue="Gradle.DeleteConactTests.deleteCreatedContactPositive" />
+        <item itemvalue="Gradle.AddContactTests.addContactPositive" />
+        <item itemvalue="Gradle.LoginTests.positiveLoginUserDtoLombok" />
+        <item itemvalue="Gradle.RegistrationTests.positiveRegistration" />
       </list>
     </recent_temporary>
   </component>
@@ -305,8 +308,35 @@
       <option name="project" value="LOCAL" />
       <updated>1698170741662</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="dataprovider">
+      <option name="closed" value="true" />
+      <created>1698388413697</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1698388413697</updated>
+    </task>
+    <task id="LOCAL-00013" summary="csv + add contact test">
+      <option name="closed" value="true" />
+      <created>1698392983644</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1698392983644</updated>
+    </task>
+    <task id="LOCAL-00014" summary="delete contact test">
+      <option name="closed" value="true" />
+      <created>1698397118276</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1698397118276</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hw 7" />
@@ -320,6 +350,9 @@
     <MESSAGE value="fixed phonebook (login and reg tests run all success)" />
     <MESSAGE value="add functionality for gradlew scripts" />
     <MESSAGE value="properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="properties" />
+    <MESSAGE value="dataprovider" />
+    <MESSAGE value="csv + add contact test" />
+    <MESSAGE value="delete contact test" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete contact test" />
   </component>
 </project>
