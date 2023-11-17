@@ -2,6 +2,7 @@ package tests.okhttp;
 
 import com.google.gson.Gson;
 import dto.AuthResponseDTO;
+import dto.ErrorDTO;
 import dto.UserDtoLombok;
 import okhttp3.*;
 import org.testng.Assert;
@@ -52,6 +53,44 @@ public class LoginTestOkHTTP {
         } else {
             System.out.println(response.code() + " error");
             Assert.fail("response not successfully");
+        }
+    }
+
+    @Test
+    public void loginNegative() {
+        UserDtoLombok userNegative = UserDtoLombok.builder()
+                .username("testqa20@gmail.com")
+                .password("123456Aa")
+                .build();
+        RequestBody requestBody = RequestBody.create(gson.toJson(userNegative), JSON);
+        Request request = new Request.Builder()
+                .url(baseUrl + "/v1/user/login/usernamepassword")
+                .post(requestBody)
+                .build();
+        Response response;
+        try {
+            response = okHttpClient.newCall(request).execute();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        if(response == null) {
+            Assert.fail("got null response");
+        } else if (response.isSuccessful()) { //  return OK 200 and token
+            Assert.fail("got response with status code : " + response.code());
+        } else {
+            String responseJson;
+            try {
+                responseJson = response.body().string();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            ErrorDTO errorDTO = gson.fromJson(responseJson, ErrorDTO.class);
+            System.out.println(response.code());
+            System.out.println(response.message());
+            System.out.println("string error: " + errorDTO.getError());
+            System.out.println("int status " + errorDTO.getStatus());
+            Assert.assertEquals(response.code(), 401, "response not 401");
         }
     }
 }
