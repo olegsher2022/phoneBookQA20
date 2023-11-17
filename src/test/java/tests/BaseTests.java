@@ -21,7 +21,7 @@ public class BaseTests {
     static ApplicationManager app = new ApplicationManager();
 
     UserDtoLombok user = UserDtoLombok.builder()
-            .email("testqa20@gmail.com")
+            .username("testqa20@gmail.com")
             .password("123456Aa$")
             .build();
 

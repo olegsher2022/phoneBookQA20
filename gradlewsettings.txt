@@ -7,5 +7,5 @@
 ./gradlew clean -Pbrowser=firefox -Dgroups=smoke shortTests
 ./gradlew clean -Dgroups=smoke shortTests
 ./gradlew clean -Dgroups=regression -Ptarget=prod shortTests
-./gradlew clean -Dgroups=regression -Ptarget=fake shortTests
+./gradlew clean -Ptarget=fake shortTests
 ./gradlew clean -Pbrowser=firefox -Dgroups=smoke,regression shortTests

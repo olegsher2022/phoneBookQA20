@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15db8580-5b9c-41ad-be07-7df3da50e1ee" name="Changes" comment="delete contact test">
+    <list default="true" id="15db8580-5b9c-41ad-be07-7df3da50e1ee" name="Changes" comment="fixed delete contact">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlewsettings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gradlewsettings.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/log-20231024T144922.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AddContactTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AddContactTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DeleteConactTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DeleteConactTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/screenshots/screenshot-2023-10-20_11_25_22.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +79,7 @@
       <recent name="manager" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'tests'">
+  <component name="RunManager" selected="Gradle.RegistrationTests.negativeRegNoDigits">
     <configuration name="AddContactTests.addContactPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -129,7 +128,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="LoginTests.positiveLoginUserDtoLombok" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LoginTests.negativeWrongPasswordNoDigits" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -142,7 +141,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.LoginTests.positiveLoginUserDtoLombok&quot;" />
+            <option value="&quot;tests.LoginTests.negativeWrongPasswordNoDigits&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -153,7 +152,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTests.positiveRegistration" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RegistrationTests.negativeRegNoDigits" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -166,7 +165,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.RegistrationTests.positiveRegistration&quot;" />
+            <option value="&quot;tests.RegistrationTests.negativeRegNoDigits&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -203,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RegistrationTests.negativeRegNoDigits" />
         <item itemvalue="Gradle.Tests in 'tests'" />
         <item itemvalue="Gradle.DeleteConactTests.deleteCreatedContactPositive" />
+        <item itemvalue="Gradle.LoginTests.negativeWrongPasswordNoDigits" />
         <item itemvalue="Gradle.AddContactTests.addContactPositive" />
-        <item itemvalue="Gradle.LoginTests.positiveLoginUserDtoLombok" />
-        <item itemvalue="Gradle.RegistrationTests.positiveRegistration" />
       </list>
     </recent_temporary>
   </component>
@@ -332,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698397118276</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fixed delete contact">
+      <option name="closed" value="true" />
+      <created>1698907062022</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1698907062022</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -353,6 +360,7 @@
     <MESSAGE value="dataprovider" />
     <MESSAGE value="csv + add contact test" />
     <MESSAGE value="delete contact test" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete contact test" />
+    <MESSAGE value="fixed delete contact" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed delete contact" />
   </component>
 </project>

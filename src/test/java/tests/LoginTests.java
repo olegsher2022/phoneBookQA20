@@ -72,7 +72,7 @@ public class LoginTests extends BaseTests {
     @Test(invocationCount = 2)
     public void negativeWrongPasswordNoLetters() {
         UserDtoLombok user = UserDtoLombok.builder()
-                .email("testqa20@gmail.com")
+                .username("testqa20@gmail.com")
                 .password("12345655$")
                 .build();
         app.getUserHelper().fillLoginUserDtoLombok(user);
@@ -83,7 +83,7 @@ public class LoginTests extends BaseTests {
     @Test
     public void negativeWrongPasswordNoDigits() {
         UserDtoLombok user = UserDtoLombok.builder()
-                .email("testqa20@gmail.com")
+                .username("testqa20@gmail.com")
                 .password("ajdsbH#$dmk")
                 .build();
         app.getUserHelper().fillLoginUserDtoLombok(user);

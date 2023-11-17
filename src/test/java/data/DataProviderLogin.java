@@ -15,13 +15,13 @@ public class DataProviderLogin {
         List<Object[]> list = new ArrayList<>();
         list.add(new Object[]{
                 UserDtoLombok.builder()
-                        .email("testqa20@gmail.com")
+                        .username("testqa20@gmail.com")
                         .password("123456Aa$")
                         .build()
         });
         list.add(new Object[]{
                 UserDtoLombok.builder()
-                        .email("testqa20@gmail.com")
+                        .username("testqa20@gmail.com")
                         .password("123456Aa$")
                         .build()
         });
@@ -33,13 +33,13 @@ public class DataProviderLogin {
         List<Object[]> list = new ArrayList<>();
         list.add(new Object[]{
                 UserDtoLombok.builder()
-                        .email("testqa20@gmail.com")
+                        .username("testqa20@gmail.com")
                         .password("123456A88")
                         .build()
         });
         list.add(new Object[]{
                 UserDtoLombok.builder()
-                        .email("testqa20@gmail.com")
+                        .username("testqa20@gmail.com")
                         .password("123456Aaa")
                         .build()
         });
@@ -56,7 +56,7 @@ public class DataProviderLogin {
                 String[] split = line.split(",");
                 list.add(new Object[]{
                         UserDtoLombok.builder()
-                                .email(split[0])
+                                .username(split[0])
                                 .password(split[1])
                                 .build()
                 });
