@@ -1,5 +1,6 @@
 package api;
 
+import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.Response;
 import dto.AuthResponseDTO;
 import dto.UserDtoLombok;
@@ -11,7 +12,10 @@ public class UserApi extends BaseApi {
     Response responseLogin = null;
 
     private Response loginRequest(UserDtoLombok user) {
-        responseLogin = given().body(user)
+        System.out.println("----------------------- loginRequest method run");
+        responseLogin = given()
+//                .contentType(ContentType.JSON)
+                .body(user)
                 .when()
                 .post(baseUrl + "/v1/user/login/usernamepassword")
                 .thenReturn();
