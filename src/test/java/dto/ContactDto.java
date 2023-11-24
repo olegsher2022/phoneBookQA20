@@ -10,6 +10,7 @@ import lombok.ToString;
 @ToString
 @Builder
 public class ContactDto {
+
     String address;
     String description;
     String email;
@@ -17,4 +18,5 @@ public class ContactDto {
     String lastName;
     String name;
     String phone;
+
 }
