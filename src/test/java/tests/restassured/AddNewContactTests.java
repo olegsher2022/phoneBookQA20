@@ -7,8 +7,6 @@ import utils.RandomUtils;
 
 public class AddNewContactTests extends BaseRA{
 
-
-
     @Test
     public void StatusCodePositiveAddNewContact() {
         Assert.assertEquals(contactsService.getStatusCodeResponseAddNewContact(createNewContact(), token), 200);

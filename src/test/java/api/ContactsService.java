@@ -9,6 +9,7 @@ import dto.NewContactDto;
 public class ContactsService extends BaseApi{
     Response responseAddNewContact = null;
     Response responseDeleteOneContact = null;
+    Response responseDeleteAllContacts = null;
 
     // ------------------------------------------ responseAddNewContact
 
@@ -40,7 +41,65 @@ public class ContactsService extends BaseApi{
         return responseAddNewContact.getBody().as(MessageResponseDTO.class).getMessage();
     }
 
+    public String getIdResponseAddNewContact(NewContactDto contactDto, String token) {
+        return getMessagePositiveResponseAddNewContact(contactDto, token).split(":")[1].trim();
+    }
+
     //-----------------------------------------------------------------------------------------
 
-    // ----------------------------------
+    // ---------------------------------- responseDeleteOneContact
+
+    private Response getResponseDeleteOneContact(String token, String id) {
+         responseDeleteOneContact = RestAssured.given()
+                .header("Authorization", token)
+                .when()
+                .delete(baseUrl + "/v1/contacts/" + id);
+         return responseDeleteOneContact;
+    }
+
+    public void setNullResponseDeleteOneContact() {
+        responseDeleteOneContact = null;
+    }
+
+    public int getStatusCodeResponseDeleteOneContact(String token, String id) {
+        if(responseDeleteOneContact == null) {
+            responseDeleteOneContact = getResponseDeleteOneContact(token, id);
+        }
+        return responseDeleteOneContact.getStatusCode();
+    }
+
+    public String getMessageDeleteOneContact(String token, String id) {
+        if(responseDeleteOneContact == null) {
+            responseDeleteOneContact = getResponseDeleteOneContact(token, id);
+        }
+        return responseDeleteOneContact.getBody().as(MessageResponseDTO.class).getMessage();
+    }
+
+    // ------------------------------------------------------------
+    // ------------------------------------------------- responseDeleteAllContacts
+    private Response getResponseDeleteAllContacts(String token) {
+        responseDeleteAllContacts = RestAssured.given()
+                .header("Authorization", token)
+                .when()
+                .delete(baseUrl + "/v1/contacts/clear");
+        return responseDeleteAllContacts;
+    }
+
+    public void setResponseDeleteAllContactsNull() {
+        responseDeleteAllContacts = null;
+    }
+
+    public int getStatusCodeResponseDeleteAllContacts(String token) {
+        if(responseDeleteAllContacts == null) {
+            responseDeleteAllContacts = getResponseDeleteAllContacts(token);
+        }
+        return responseDeleteAllContacts.getStatusCode();
+    }
+
+    public String getMessageResponseDeleteAllContactsPositive(String token) {
+        if(responseDeleteAllContacts == null) {
+            responseDeleteAllContacts = getResponseDeleteAllContacts(token);
+        }
+        return responseDeleteAllContacts.getBody().as(MessageResponseDTO.class).getMessage();
+    }
 }

@@ -10,7 +10,9 @@ import static com.jayway.restassured.RestAssured.given;
 public class UserApi extends BaseApi {
 
     Response responseLogin = null;
+    Response responseRegistration = null;
 
+    // ------------------------------------- responseLogin
     private Response loginRequest(UserDtoLombok user) {
         System.out.println("----------------------- loginRequest method run");
         responseLogin = given()
@@ -38,6 +40,36 @@ public class UserApi extends BaseApi {
             responseLogin = loginRequest(user);
         }
         return responseLogin.getBody().as(AuthResponseDTO.class).getToken();
+    }
+
+    // ---------------------------- responseRegistration
+
+    private Response getRegistrationResponse(UserDtoLombok user) {
+        responseRegistration = given()
+                .body(user)
+                .contentType(ContentType.JSON)
+                .when()
+                .post(baseUrl + "/v1/user/registration/usernamepassword")
+                .thenReturn();
+        return responseRegistration;
+    }
+
+    public void responseRegistrationSetNull() {
+        responseRegistration = null;
+    }
+
+    public int getStatusCodeResponseRegistration(UserDtoLombok user) {
+        if(responseRegistration == null) {
+            responseRegistration = getRegistrationResponse(user);
+        }
+        return responseRegistration.getStatusCode();
+    }
+
+    public String getTokenRegistrationResponse(UserDtoLombok user) {
+        if(responseRegistration == null) {
+            responseRegistration = getRegistrationResponse(user);
+        }
+        return responseRegistration.then().extract().path("token");
     }
 
 }

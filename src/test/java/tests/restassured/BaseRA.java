@@ -5,6 +5,7 @@ import api.UserApi;
 import dto.NewContactDto;
 import dto.UserDtoLombok;
 import org.testng.annotations.BeforeSuite;
+import org.testng.asserts.SoftAssert;
 import utils.RandomUtils;
 
 public class BaseRA {
@@ -12,6 +13,7 @@ public class BaseRA {
     ContactsService contactsService = new ContactsService();
     String token = "";
     RandomUtils randomUtils = new RandomUtils();
+    SoftAssert softAssert = new SoftAssert();
 
     UserDtoLombok user = UserDtoLombok.builder()
             .username("testqa20@gmail.com")
