@@ -2,7 +2,7 @@ package tests.restassured;
 
 import api.ContactsService;
 import api.UserApi;
-import dto.NewContactDto;
+import dto.ContactDto;
 import dto.UserDtoLombok;
 import org.testng.annotations.BeforeSuite;
 import org.testng.asserts.SoftAssert;
@@ -25,9 +25,9 @@ public class BaseRA {
         token = userApi.getTokenFromLoginResponse(user);
     }
 
-    public NewContactDto createNewContact() {
+    public ContactDto createNewContact() {
         String phoneNumber = randomUtils.generateStringDigits(12);
-        NewContactDto contact1 = NewContactDto.builder()
+        ContactDto contact1 = ContactDto.builder()
                 .address("sjdfkbwi")
                 .description("bdfigyeg")
                 .email("sjdfnsjhb@mail.com")

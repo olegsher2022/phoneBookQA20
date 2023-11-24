@@ -1,6 +1,6 @@
 package manager;
 
-import dto.NewContactDto;
+import dto.ContactDto;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -30,7 +30,7 @@ public class ContactHelper extends BaseHelper{
    }
    //-----------------------------------------------------
 
-    public void addNewContact(NewContactDto newContactDto) {
+    public void addNewContact(ContactDto newContactDto) {
         clickBase(btnAddNewContact);
         typeTextBase(inputNameAddContact, newContactDto.getName());
         typeTextBase(inputLastNameAddContact, newContactDto.getLastName());

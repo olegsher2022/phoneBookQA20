@@ -18,12 +18,25 @@ public class DeleteContactTests extends BaseRA{
     }
 
     @Test
-    public void deleteAllContacts() {
+    public void deleteAllContactsWhenSMTHExist() {
+        contactsService.getIdResponseAddNewContact(createNewContact(), token);
+        contactsService.setResponseDeleteAllContactsNull();
+        softAssert.assertEquals(contactsService.getStatusCodeResponseDeleteAllContacts(token), 200);
+        System.out.println(contactsService.getMessageResponseDeleteAllContactsPositive(token));
+        softAssert.assertEquals(contactsService.getMessageResponseDeleteAllContactsPositive(token),
+                "All contacts was deleted!");
+        contactsService.setResponseDeleteAllContactsNull();
+        softAssert.assertAll();
+    }
+
+    @Test
+    public void deleteAllContactsWhenNoContacts() {
+        contactsService.getStatusCodeResponseDeleteAllContacts(token);
+        contactsService.setResponseDeleteAllContactsNull();
         softAssert.assertEquals(contactsService.getStatusCodeResponseDeleteAllContacts(token), 200);
         System.out.println(contactsService.getMessageResponseDeleteAllContactsPositive(token));
         softAssert.assertEquals(contactsService.getMessageResponseDeleteAllContactsPositive(token),
                 "All contacts was deleted!");
         softAssert.assertAll();
     }
-
 }

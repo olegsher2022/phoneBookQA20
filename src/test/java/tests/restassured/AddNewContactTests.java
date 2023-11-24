@@ -1,9 +1,7 @@
 package tests.restassured;
 
-import dto.NewContactDto;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utils.RandomUtils;
 
 public class AddNewContactTests extends BaseRA{
 

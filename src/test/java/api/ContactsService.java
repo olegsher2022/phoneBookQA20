@@ -4,16 +4,17 @@ import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.Response;
 import dto.MessageResponseDTO;
-import dto.NewContactDto;
+import dto.ContactDto;
 
 public class ContactsService extends BaseApi{
     Response responseAddNewContact = null;
     Response responseDeleteOneContact = null;
     Response responseDeleteAllContacts = null;
+    Response responseUpdateContact = null;
 
     // ------------------------------------------ responseAddNewContact
 
-    private Response getResponseAddNewContact(NewContactDto newContactDto, String token) {
+    private Response getResponseAddNewContact(ContactDto newContactDto, String token) {
         responseAddNewContact = RestAssured.given()
                 .contentType(ContentType.JSON)
                 .header("Authorization", token)
@@ -27,21 +28,21 @@ public class ContactsService extends BaseApi{
         responseAddNewContact = null;
     }
 
-    public int getStatusCodeResponseAddNewContact(NewContactDto contactDto, String token) {
+    public int getStatusCodeResponseAddNewContact(ContactDto contactDto, String token) {
         if(responseAddNewContact == null) {
             responseAddNewContact = getResponseAddNewContact(contactDto, token);
         }
         return responseAddNewContact.getStatusCode();
     }
 
-    public String getMessagePositiveResponseAddNewContact(NewContactDto contactDto, String token) {
+    public String getMessagePositiveResponseAddNewContact(ContactDto contactDto, String token) {
         if(responseAddNewContact == null) {
             responseAddNewContact = getResponseAddNewContact(contactDto, token);
         }
         return responseAddNewContact.getBody().as(MessageResponseDTO.class).getMessage();
     }
 
-    public String getIdResponseAddNewContact(NewContactDto contactDto, String token) {
+    public String getIdResponseAddNewContact(ContactDto contactDto, String token) {
         return getMessagePositiveResponseAddNewContact(contactDto, token).split(":")[1].trim();
     }
 
@@ -101,5 +102,30 @@ public class ContactsService extends BaseApi{
             responseDeleteAllContacts = getResponseDeleteAllContacts(token);
         }
         return responseDeleteAllContacts.getBody().as(MessageResponseDTO.class).getMessage();
+    }
+
+    // ---------------------- responseUpdateContact
+    private Response getResponseUpdateContact(ContactDto newContactDto, String token) {
+        responseUpdateContact = RestAssured.given()
+                .contentType(ContentType.JSON)
+                .header("Authorization", token)
+                .body(newContactDto)
+                .when()
+                .put(baseUrl + "/v1/contacts");
+        return responseUpdateContact;
+    }
+
+    public int getStatusCodeResponseUpdateContact(ContactDto newContactDto, String token) {
+        if(responseUpdateContact == null) {
+            responseUpdateContact = getResponseUpdateContact(newContactDto, token);
+        }
+        return responseUpdateContact.getStatusCode();
+    }
+
+    public String getMessageSuccessUpdateContact(ContactDto newContactDto, String token) {
+        if(responseUpdateContact == null) {
+            responseUpdateContact = getResponseUpdateContact(newContactDto, token);
+        }
+        return responseUpdateContact.then().extract().path("message");
     }
 }

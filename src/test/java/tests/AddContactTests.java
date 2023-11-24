@@ -1,6 +1,6 @@
 package tests;
 
-import dto.NewContactDto;
+import dto.ContactDto;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -27,7 +27,7 @@ public class AddContactTests extends BaseTests{
         String phone = randomUtils.generateStringDigits(12);
         System.out.println("phone for the new contact: " + phone);
         logger.info("phone for the new contact: " + phone);
-        NewContactDto newContactDto = NewContactDto.builder()
+        ContactDto newContactDto = ContactDto.builder()
                 .address("ghj")
                 .description("asadhj")
                 .email("dfrdd@mail.ff")

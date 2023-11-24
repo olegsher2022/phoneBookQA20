@@ -9,7 +9,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @Builder
-public class NewContactDto {
+public class ContactDto {
     String address;
     String description;
     String email;
